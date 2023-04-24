@@ -1,4 +1,4 @@
-:- ['diccionario_esp.pl']. 
+:- ['diccionario_eng.pl']. 
 :- ['draw.pl'].
 
 
@@ -31,6 +31,7 @@ grupo_nominal_compuesto(gn(GN, OSR)) --> grupo_nominal(GN), oracion_subordinada_
 
 % Sintagma preposicional
 grupo_preposicional(gp(P,GN)) --> preposicion(P), grupo_nominal(GN).
+%grupo_preposicional(gp(GN,GP)) --> grupo_nominal(GN), grupo_preposicional(GP).
 
 % Sintagma adjatival
 grupo_adjetival(gadj(A)) --> adjetivo(A).

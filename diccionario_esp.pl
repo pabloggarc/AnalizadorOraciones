@@ -78,7 +78,6 @@ conj('y').
 conj('pero').
 conj('aunque').
 conj('e').
-conj('que').
 conj('mientras').
 
 % Preposiciones

@@ -46,8 +46,10 @@ v('vimos','saw'). % we saw -> que vimos: we saw (frase 14)
 v('canta','sings').
 v('salta','jumps').
 v('bebe','drinks').
-v('escribir','write').
 v('era','was').
+
+inf('escribir','writing').
+
 
 % Adjectives
 adj('moreno','brunette').
@@ -75,11 +77,10 @@ conj('y','and').
 conj('pero','but').
 conj('aunque','although').
 conj('e','and').
-conj('que','that'). %who -> Him who is something / %which -> The one which is something 
 conj('mientras','while').
 
 % Prepositions
-prep('en','in'). %at -> at the table
+prep('en','at'). %at -> at the table
 prep('por','by'). %in -> in the evenings
 prep('de','of').
 prep('para','for'). %to -> to write documents 
