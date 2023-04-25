@@ -3,16 +3,16 @@
 
 
 % Terminales
-nombre_propio(np(X)) --> [X],{np(X)}.
-nombre(n(X)) --> [X],{n(X)}.
-verbo(v(X)) --> [X],{v(X)}.
-adjetivo(adj(X)) --> [X],{adj(X)}.
-determinante(det(X)) --> [X],{det(X)}.
-conjuncion(conj(X)) --> [X],{conj(X)}.
-preposicion(prep(X)) --> [X],{prep(X)}.
-adverbio(adv(X)) --> [X],{adv(X)}.
-pronombre(pro(X)) --> [X],{pro(X)}.
-infinitivo(inf(X)) --> [X],{inf(X)}.
+nombre_propio(np(X)) --> [X],{np(X), write(X)}.
+nombre(n(X)) --> [X],{n(X), write(X)}.
+verbo(v(X)) --> [X],{v(X), write(X)}.
+adjetivo(adj(X)) --> [X],{adj(X), write(X)}.
+determinante(det(X)) --> [X],{det(X),write(X)}.
+conjuncion(conj(X)) --> [X],{conj(X), nl}.
+preposicion(prep(X)) --> [X],{prep(X), write(X)}.
+adverbio(adv(X)) --> [X],{adv(X), write(X)}.
+pronombre(pro(X)) --> [X],{pro(X), nl}.
+infinitivo(inf(X)) --> [X],{inf(X), write(X)}.
 
 % No terminales -> Sintagmas
 

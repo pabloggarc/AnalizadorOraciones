@@ -11,7 +11,7 @@ else:
     modo = sys.argv[1]
     sub_query1 = "analizar(["
     sub_query2 = "" 
-    sub_query3 = "], X), draw(X). "
+    sub_query3 = "], X),nl,write(X)."
 
     for palabra in frase.split(" "):
         if ',' in palabra: 

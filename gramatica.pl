@@ -91,3 +91,46 @@ quitarComas([X|Y],NL):-
   quitarComas(Y,NL2),
   NL = [X|NL2].
 
+
+
+imprimir(C):-
+  functor(C, F, _),
+  F = or,
+  arg(2,C,X),
+  imprimir(X), nl.
+
+imprimir(C):-
+  functor(C, F, _),
+  F = conj, nl.
+
+imprimir(C):-
+  functor(C, F, A),
+  A = 0,
+  write(F), write(' ').
+
+imprimir(C):-
+  functor(C, _, A),
+  A = 1,
+  arg(1, C, X),
+  imprimir(X).
+
+imprimir(C):-
+  functor(C, _, A),
+  A = 2,
+  arg(1, C, X),
+  arg(2, C, Y),
+  imprimir(X),
+  imprimir(Y).
+
+imprimir(C):-
+  functor(C, _, A),
+  A = 3,
+  arg(1, C, X),
+  arg(2, C, Y),
+  arg(3, C, Z),
+  imprimir(X),
+  imprimir(Y),
+  imprimir(Z).
+
+
+
