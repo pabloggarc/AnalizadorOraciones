@@ -92,45 +92,94 @@ quitarComas([X|Y],NL):-
   NL = [X|NL2].
 
 
+descomponer(C):-
+  cogerSujeto(C, S),
+  imprimir(C, S).
 
-imprimir(C):-
+cogerSujeto(C ,S):-
+  functor(C, F, _),
+  F = gn,
+  arg(2, C, SH),
+  functor(SH, FSH, ASH),
+  FSH = or, %si el segundo hijo del GN es una oracion subordinada relativa
+  arg(1, C, S).
+
+cogerSujeto(C, C):-
+  functor(C, F, _),
+  F = gn.
+
+cogerSujeto(C,S):-
+  arg(1,C,PH),
+  cogerSujeto(PH,S).
+%-------------------------------------------------------------------------------
+
+
+imprimir(C, SO):-
   functor(C, F, _),
   F = or,
   arg(2,C,X),
-  imprimir(X), nl.
+  arg(1,X,X1),
+  functor(X1, FX1, AX1),
+  FX1 = gv,
+  nl,
+  imprimir(SO, SO),
+  imprimir(X, SO).
 
-imprimir(C):-
+imprimir(C, SO):-
   functor(C, F, _),
-  F = conj, nl.
+  F = or,
+  arg(2,C,X),
+  nl,
+  imprimir(X, SO).
 
-imprimir(C):-
+imprimir(C, SO):-
+  functor(C, F, A),
+  not(F = gn),
+  A = 3,  %tiene tres hijos (dos oraciones y una conjuncion)
+  arg(2,C,X), %Accedes al segundo hijo
+  functor(X, FX, AX),
+  FX = conj, %si ese segundo hijo es una conjuncion 
+  arg(1, C, PH), %Accedemos a la primera oracion simple
+  imprimir(PH, SO), nl,
+  arg(3, C, TH), %Accedemos a la tercera oracion simple
+  imprimir(TH, SO), nl.
+
+imprimir(C, SO):-
+  functor(C, F, A),
+  F = os,
+  A = 1,
+  imprimir(SO, SO),
+  arg(1, C, X),
+  imprimir(X, SO).
+
+imprimir(C, SO):-
   functor(C, F, A),
   A = 0,
   write(F), write(' ').
 
-imprimir(C):-
+imprimir(C, SO):-
   functor(C, _, A),
   A = 1,
   arg(1, C, X),
-  imprimir(X).
+  imprimir(X, SO).
 
-imprimir(C):-
+imprimir(C, SO):-
   functor(C, _, A),
   A = 2,
   arg(1, C, X),
   arg(2, C, Y),
-  imprimir(X),
-  imprimir(Y).
+  imprimir(X, SO),
+  imprimir(Y, SO).
 
-imprimir(C):-
+imprimir(C, SO):-
   functor(C, _, A),
   A = 3,
   arg(1, C, X),
   arg(2, C, Y),
   arg(3, C, Z),
-  imprimir(X),
-  imprimir(Y),
-  imprimir(Z).
+  imprimir(X, SO),
+  imprimir(Y, SO),
+  imprimir(Z, SO).
 
 
 
