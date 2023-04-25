@@ -11,7 +11,7 @@ cogerSujeto(C ,S):-
   functor(C, F, _),
   F = gn, %Si el GN es el primer hijo del oracion compuesta
   arg(2, C, SH), 
-  functor(SH, FSH, ASH), 
+  functor(SH, FSH, _), 
   FSH = or, %si el segundo hijo del GN es una oracion subordinada relativa
   arg(1, C, S).
 
@@ -30,7 +30,7 @@ imprimir(C, SO):-
   A = 2,
   arg(1, C, GN),
   arg(2, C, GV),
-  functor(GV, FGV, AGV),
+  functor(GV, FGV, _),
   FGV = gv,
   arg(1, GV, FH),
   arg(2, GV, SH),
@@ -45,7 +45,7 @@ imprimir(C, SO):-
 
 %Caso de que sea un grupo verbal seguido de un grupo nominal compuesto por grupo nominal y oracion de relativo
 imprimir(C, SO):-
-  functor(C, F, A),
+  functor(C, F, _),
   F = gv,
   arg(1, C, FH),
   arg(2, C, SH),
@@ -53,7 +53,7 @@ imprimir(C, SO):-
   FSH = gn,
   arg(1, SH, FHSH),
   arg(2, SH, OR),
-  functor(OR, FOR, AOR),
+  functor(OR, FOR, _),
   FOR = or,
   imprimir(FH, SO),
   imprimir(FHSH, SO),
@@ -65,7 +65,7 @@ imprimir(C, SO):-
   functor(C, F, A),
   A = 2,
   F = gn,
-  arg(1, C, FH),
+  arg(1, C, _),
   arg(2, C, SH),
   functor(SH, FHH, _),
   FHH = or,
@@ -105,7 +105,7 @@ imprimir(C, SO):- %Imprime el sujeto omitido de la oración simple (se habrá ll
   imprimir(X, SO).
 
 %Explorar subniveles del árbol
-imprimir(C, SO):- %Imprime el nodo terminal 
+imprimir(C, _):- %Imprime el nodo terminal 
   functor(C, F, A),
   A = 0, %Es hoja 
   write(F), write(' ').
