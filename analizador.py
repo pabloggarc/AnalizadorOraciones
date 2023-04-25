@@ -1,5 +1,6 @@
-import sys, os
+import sys
 from pyswip import Prolog
+from unidecode import unidecode
 from Prolog2LaTeX import main
 
 
@@ -19,10 +20,16 @@ else:
         else:  
             sub_query2 += "'" + palabra + "', "
 
-    query = sub_query1 + sub_query2[: - 2] + sub_query3
+    query = sub_query1 + sub_query2[: -2] + sub_query3
 
     prolog = Prolog()
     prolog.consult("gramatica.pl")
 
+X = ""
+
 for answer in prolog.query(query):
     main(answer['X'], sys.argv[1])
+    X = answer['X']
+
+if X != "": 
+    for answer in prolog.query("descomponer(" + unidecode(X).lower() + ")."): pass

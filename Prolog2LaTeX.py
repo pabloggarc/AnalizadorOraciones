@@ -2,8 +2,25 @@ import os, shutil
 from datetime import datetime
 from pdf2image import convert_from_path
 
-
-keyWords = {"oc": "\\textbf{OC}", "os": "\\textbf{OS}", "gv": "\\textbf{GV}", "gn": "\\textbf{GN}"}
+keyWords = {"[.oc ": "[.\\textbf{O. Coordinada} ",
+            "[.os": "[.\\textbf{O. Simple}",
+            "[.or": "[.\\textbf{O. Sub. Relativo}",
+            "[.ocm": "[.\\textbf{O. Compuesta}",
+            "[.gv": "[.\\textbf{SV}",
+            "[.gn": "[.\\textbf{SN}",
+            "[.gadj": "[.\\textbf{S.Adj}",
+            "[.gadv": "[.\\textbf{S.Adv}",
+            "[.gp": "[.\\textbf{S.Prep}",
+            "[.det": "[.\\textit{det.}",
+            "[.n ": "[.\\textit{nombre} ",
+            "[.np": "[.\\textit{n. propio}",
+            "[.v": "[.\\textit{verbo}",
+            "[.adj": "[.\\textit{adj.}",
+            "[.adv": "[.\\textit{adv.}",
+            "[.conj": "[.\\textit{conj.}",
+            "[.prep": "[.\\textit{prep.}", 
+            "[.pro ": "[.\\textit{pron.} "
+            }
 
 def parser(sol, keyWords): 
     tex_header = "\\documentclass{standalone}\n\\usepackage{qtree}\n\\begin{document}\n\t\\Tree "

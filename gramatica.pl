@@ -80,7 +80,7 @@ oracion_compuesta(ocm(GN, GV)) --> grupo_nominal_compuesto(GN), grupo_verbal(GV)
 oracion_compuesta(ocm(GN, GV)) --> grupo_nominal(GN),  grupo_verbal_compuesto(GV).
 oracion_compuesta(ocm(GV)) --> grupo_verbal_compuesto(GV).
 
-analizar(L, X) :- quitarComas(L,NL), oracion(X, NL, []), write('Descomposicion de la oracion').%, nl, descomponer(X).
+analizar(L, X) :- quitarComas(L,NL), oracion(X, NL, []), write('Descomposicion de la oracion'), nl.% descomponer(X).
 
 quitarComas([],[]).
 quitarComas([X|Y], NL):- 
