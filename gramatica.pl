@@ -95,17 +95,16 @@ oracion_compuesta(ocm(GN, GV)) --> grupo_nominal_compuesto(GN),  grupo_verbal_co
 %---PREDICADOS AUXILIARES---
 %Predicado que devuelve la oración introducida sin las comas ya que no nos hacen falta para estudiar la estructura de la oración según nuestra definición gramatical
 %Caso base
-quitarComas([],[]).
+quitarComas([], []).
 %En el caso de que la cabeza sea una coma devolvemos la cola
 quitarComas([X|Y], NL):- 
   X = ',',
   quitarComas(Y,NL).
 %En el caso de que la cabeza no sea una coma devolvemos una lista fromada por esa cabeza y la cola con las comas quitadas
 quitarComas([X|Y],NL):-
-  not(X = ','),
+  X \= ',',
   quitarComas(Y,NL2),
   NL = [X|NL2].
 
 %Predicado al que se debe llamar para hacer todas las tareas definidas (análisis, descomposición y traducción de la oración)
-analizar(L, X) :- quitarComas(L,NL), oracion(X, NL, []), draw(X), traducir(eng, X),nl.
-
+analizar(L, X) :- quitarComas(L,NL), oracion(X, NL, []), draw(X), traducir(eng, X), nl.

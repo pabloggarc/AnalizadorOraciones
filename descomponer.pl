@@ -29,7 +29,7 @@ cogerSujeto(C, C):-
 
 %Si no hay un sujeto definido en la oración, el sujeto será vacío.
 cogerSujeto(C, S):-
-functor(C, _, A),
+  functor(C, _, A),
   A = 0,
   S = gn('').
 %Este predicado ayuda a bajar en el árbol hasta encontrar el primer grupo nominal

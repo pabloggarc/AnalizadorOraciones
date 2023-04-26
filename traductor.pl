@@ -68,7 +68,6 @@ grupo_adjetival(eng, gadj(AV,A)) --> adverbio(eng, AV), adjetivo(eng, A).
 grupo_adjetival(eng, gadj(A,C,GA)) --> adjetivo(eng, A), conjuncion(eng, C), grupo_adjetival(eng, GA).
 
 % Sintagma verbal en español
-grupo_verbal(esp, gv(VA,C,VB)) --> verbo(esp, VA), conjuncion(esp, C), verbo(esp, VB).
 grupo_verbal(esp, gv(V,GN)) --> verbo(esp, V), grupo_nominal(esp, GN).
 grupo_verbal(esp, gv(V,GN)) --> verbo(esp, V), grupo_nominal_compuesto(esp, GN).
 grupo_verbal(esp, gv(V,GA)) --> verbo(esp, V), grupo_adjetival(esp, GA).
@@ -81,7 +80,6 @@ grupo_verbal(esp, gv(V,GA,GN)) --> verbo(esp, V), grupo_adverbial(esp, GA), grup
 grupo_verbal(esp, gv(V)) --> verbo(esp, V).
 
 % Sintagma verbal en inglés
-grupo_verbal(eng, gv(VA,C,VB)) --> verbo(eng, VA), conjuncion(eng, C), verbo(eng, VB).
 grupo_verbal(eng, gv(V,GN)) --> verbo(eng, V), grupo_nominal(eng, GN).
 grupo_verbal(eng, gv(V,GN)) --> verbo(eng, V), grupo_nominal_compuesto(eng, GN).
 grupo_verbal(eng, gv(V,GA)) --> verbo(eng, V), grupo_adjetival(eng, GA).
