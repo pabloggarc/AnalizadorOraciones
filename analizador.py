@@ -3,7 +3,6 @@ from pyswip import Prolog
 from unidecode import unidecode
 from Prolog2LaTeX import main
 
-
 if len(sys.argv) != 3: 
     print("Se esperaban argumentos -pdf / -img 'frase'")
     sys.exit(-1)
