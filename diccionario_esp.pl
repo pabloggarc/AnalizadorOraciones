@@ -1,12 +1,17 @@
-%Diccionario de palabras en español
+%Este fichero contiene la base de datos de palabras en español (diccionario de palabras español)
 
 % Nombres propios
 np('JOS\xC9'). %JOSÉ
 np('MAR\xCD\A'). %MARÍA
-np('H\xC9\CTOR'). %HÉCTOR
+np('HECTOR'). %HÉCTOR
 np('IRENE').
 np('Filosof\xED\a'). %Filosofía
 np('Derecho').
+np('ALVARO').
+np('PABLO').
+np('ALEX').
+np('CRA').
+np('JUAN').
 
 % Nombres
 n('caf\xE9'). %café
@@ -28,6 +33,16 @@ n('herramienta').
 n('tardes').
 n('procesador').
 n('textos').
+n('papel').
+n('pantalla').
+n('teclado').
+n('castillo').
+n('canci\xF3\n'). %canción
+n('piano').
+n('guitarra').
+n('m\xE1\quina'). %máquina
+n('pr\xE1\ctica').
+n('pitufo').
 
 % Verbos
 v('es').
@@ -46,11 +61,14 @@ v('vimos').
 v('canta').
 v('salta').
 v('bebe').
-v('escribir').
 v('era').
+v('estaba').
+v('anda').
+v('toca').
 
 %Infinitivos
 inf('escribir').
+inf('estudiar').
 
 % Adjetivos
 adj('moreno').
@@ -62,6 +80,11 @@ adj('\xE1\gil'). %ágil
 adj('delicado').
 adj('fritas').
 adj('rojas').
+adj('verdes').
+adj('amarillas').
+adj('azul').
+adj('entregada').
+adj('interesante').
 
 
 % Determinantes
@@ -69,6 +92,7 @@ det('el').
 det('un').
 det('una').
 det('la').
+det('La').
 det('las').
 det('mi'). 
 det('El').

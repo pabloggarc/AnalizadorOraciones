@@ -1,12 +1,17 @@
-%Diccionario de palabras en inglés
+%Este fichero contiene la base de datos de palabras en español y su traducción al inglés (diccionario de palabras traducidas a inglés)
 
 % Names
 np('JOS\xC9', 'JOSE').
 np('MAR\xCD\A', 'MARIA').
-np('H\xC9\CTOR', 'HECTOR').
+np('HECTOR', 'HECTOR').
 np('IRENE', 'IRENE').
 np('Filosof\xED\a', 'Philosophy').
 np('Derecho', 'Law').
+np('ALVARO', 'ALVARO').
+np('PABLO', 'PABLO').
+np('ALEX', 'ALEX').
+np('CRA', 'CRA').
+np('JUAN', 'JUAN').
 
 % Nouns
 n('caf\xE9','coffee'). %café
@@ -26,14 +31,25 @@ n('vecino','neighbour'). %neighbor
 n('novela','novel').
 n('herramienta','tool').
 n('tardes','afternoons').
+n('procesador de textos', 'text proccesor').
 n('procesador','processor').
-n('textos','texts'). %word -> word processor/text processor
+n('textos','texts'). 
+n('papel', 'paper').
+n('pantalla', 'screen').
+n('teclado', 'keyboard').
+n('castillo', 'castle').
+n('canci\xF3\n', 'song'). %canción
+n('piano', 'piano').
+n('guitarra', 'guitar').
+n('m\xE1\quina', 'machine'). %máquina
+n('pr\xE1\ctica', 'assignment').
+n('pitufo', 'smurf').
 
 % Verbs
-v('es','is'). %it's -> it's quite slow (frase 12)
+v('es','is'). 
 v('estudia','studies').
 v('toma','takes').
-v('recoge','picks up'). %clears
+v('recoge','cleans up').
 v('lee','reads').
 v('comen','eat').
 v('beben','drink').
@@ -41,26 +57,38 @@ v('prefiere','prefers').
 v('escala','climbs').
 v('come','eats').
 v('sirve','serves').
-v('caz\xF3','hunted'). %cazó
-v('vimos','saw'). % we saw -> que vimos: we saw (frase 14)
+v('caz\xF3','was hunted by'). %cazó
+v('vimos','we saw'). 
 v('canta','sings').
 v('salta','jumps').
 v('bebe','drinks').
 v('era','was').
+v('canta', 'sings').
+v('salta', 'jumps').
+v('bebe', 'drinks').
+v('estaba', 'was').
+v('anda', 'walks').
+v('toca', 'plays').
 
 inf('escribir','writing').
+inf('estudiar', 'studying').
 
 
 % Adjectives
 adj('moreno','brunette').
 adj('alta','tall').
-adj('gris','gray'). %grey
+adj('gris','grey').
 adj('potente','powerful').
 adj('lento','slow').
 adj('\xE1\gil','agile'). %ágil
-adj('delicado','delicate'). %picky -> Lo usan para comida (frase 10) asiq quisquilloso?
+adj('delicado','delicate'). 
 adj('fritas','fried').
 adj('rojas','red').
+adj('verdes', 'green').
+adj('amarillas', 'yellow').
+adj('azul', 'blue').
+adj('entregada', 'submitted').
+adj('interesante', 'interesting').
 
 
 % Determiners
@@ -68,6 +96,7 @@ det('el','the').
 det('un','a').
 det('una','a').
 det('la','the').
+det('La', 'the').
 det('las','the').
 det('mi','my').
 det('El','The').
@@ -80,10 +109,10 @@ conj('e','and').
 conj('mientras','while').
 
 % Prepositions
-prep('en','at'). %at -> at the table
-prep('por','by'). %in -> in the evenings
+prep('en','at'). 
+prep('por','in'). %in -> in the evenings
 prep('de','of').
-prep('para','for'). %to -> to write documents 
+prep('para','for'). 
  
 
 % Adverbs
@@ -93,4 +122,4 @@ adv('bastante','quite').
 adv('ayer','yesterday').
 
 % Pronouns
-pro('que','that'). %who -> Him who is something / %which -> The one which is something 
+pro('que','that'). 

@@ -1,3 +1,4 @@
+%Este fichero contiene los predicados necesarios para la traducción de una oración al idioma inglés dada su estructura sintáctica.
 :- ['draw.pl'].
 :- ['diccionario_eng.pl']. 
 
@@ -95,6 +96,7 @@ grupo_verbal(eng, gv(V)) --> verbo(eng, V).
 %Sintagma Verbal Compuesto (SV con oración subordinada) en español
 grupo_verbal_compuesto(esp, gv(GV, OSR)) --> grupo_verbal(esp, GV), oracion_subordinada_rel(esp, OSR).
 
+
 %Sintagma Verbal Compuesto (SV con oración subordinada) en inglés
 grupo_verbal_compuesto(eng, gv(GV, OSR)) --> grupo_verbal(eng, GV), oracion_subordinada_rel(eng, OSR).
 
@@ -134,6 +136,7 @@ oracion_subordinada_rel(eng, or(ProRel, OR)) --> pronombre(eng, ProRel), oracion
 
 % Oracion compuesta en español
 oracion_compuesta(esp, ocm(OC)) --> oracion_coordinada(esp, OC).
+oracion_compuesta(esp, ocm(OC1, C, OC2)) --> oracion_coordinada(esp, OC1), conjuncion(esp, C), oracion_coordinada(esp, OC2).
 oracion_compuesta(esp, ocm(OCD, C, OCM)) --> oracion_coordinada(esp, OCD), conjuncion(esp, C), oracion_compuesta(esp, OCM).
 oracion_compuesta(esp, ocm(OS, C, OC)) --> oracion_simple(esp, OS), conjuncion(esp, C), oracion_coordinada(esp, OC).
 oracion_compuesta(esp, ocm(GN, GV)) --> grupo_nominal_compuesto(esp, GN), grupo_verbal(esp, GV).
@@ -143,6 +146,7 @@ oracion_compuesta(esp, ocm(GN, GV)) --> grupo_nominal_compuesto(esp, GN),  grupo
 
 % Oracion compuesta en inglés
 oracion_compuesta(eng, ocm(OC)) --> oracion_coordinada(eng, OC).
+oracion_compuesta(eng, ocm(OC1, C, OC2)) --> oracion_coordinada(eng, OC1), conjuncion(eng, C), oracion_coordinada(eng, OC2).
 oracion_compuesta(eng, ocm(OCD, C, OCM)) --> oracion_coordinada(eng, OCD), conjuncion(eng, C), oracion_compuesta(eng, OCM).
 oracion_compuesta(eng, ocm(OS, C, OC)) --> oracion_simple(eng, OS), conjuncion(eng, C), oracion_coordinada(eng, OC).
 oracion_compuesta(eng, ocm(GN, GV)) --> grupo_nominal_compuesto(eng, GN), grupo_verbal(eng, GV).
@@ -156,5 +160,5 @@ escribir([]).
 escribir([X|Y]):-write(X), write(' '),escribir(Y).
 
 % Predicado que, dada la estructura de la frase en español, devuelve la frase traducida en inglés
-traducir(eng, X):- oracion(eng, X, Y, []), write('Traducción al inglés'),nl, escribir(Y), !.
+traducir(eng, X):- oracion(eng, X, Y, []), write('-> Traduccion al ingles'),nl, escribir(Y), !.
 
