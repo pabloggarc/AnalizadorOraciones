@@ -6,4 +6,4 @@ Se han propuesto una serie de mejoras a la práctica:
 - Más palabras en el diccionario
 - Traductor español → inglés
 - Script de Python para parsear la frase y llamar a Prolog
-- Generación en tiempo real del árbol de sintaxis en `\LaTeX`, para una mejor visualización
+- Generación en tiempo real del árbol de sintaxis en $\mathrm{\LaTeX}$, para una mejor visualización
