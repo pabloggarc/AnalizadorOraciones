@@ -12,6 +12,7 @@ Para ejecutar el programa deberá tenerse instalado:
 - SWI-Prolog versión `8.4.2`
 - Python (se ha probado para versiones superiores o iguales a la `3.8.6`)
 - Una distribución de $\mathrm{\LaTeX}$, como $\mathrm{MiK\TeX}$, que contenga el compilador $\mathrm{pdf\LaTeX}$ en su variable de entorno
+
 Además, deberán instalarse una serie de librerías con `pip`: 
 - `pip install pyswip`
 - `pip install unidecode`
